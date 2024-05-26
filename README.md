@@ -1,2 +1,2 @@
 # vegas-finder
-New proejct :)
+New project :)
