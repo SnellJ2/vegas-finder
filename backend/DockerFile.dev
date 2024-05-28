@@ -1,0 +1,32 @@
+# Use a base image with OpenJDK installed
+FROM maven:latest AS builder
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Maven project files to the container
+COPY pom.xml .
+
+# Download dependencies specified in pom.xml to cache them
+RUN mvn -B dependency:resolve dependency:resolve-plugins
+
+# Copy the source code to the container
+COPY src ./src
+
+# Package the application
+RUN mvn -B package -DskipTests
+
+# Use a smaller base image for the runtime environment
+FROM openjdk:11-jre-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the packaged JAR file from the builder stage to the runtime environment
+COPY --from=builder /app/target/backend-1.0.jar ./backend-1.0.jar
+
+# Expose the port that the Spring Boot application will run on
+EXPOSE 8080
+
+# Command to run the Spring Boot application
+CMD ["java", "-jar", "backend-1.0.jar"]

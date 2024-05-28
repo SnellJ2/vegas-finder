@@ -6,3 +6,20 @@ services:
       dockerfile: DockerFile.dev
     ports:
       - "3000:3000"
+  backend:
+      build:
+        context: ./backend
+        dockerfile: DockerFile.dev
+      ports:
+        - "8080:8080"
+      depends_on:
+        - database
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/test_db
+
+  database:
+      image: postgres:latest
+      ports:
+        - "5432:5432"
+      environment:
+        POSTGRES_DB: test_db
