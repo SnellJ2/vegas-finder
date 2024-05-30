@@ -46,6 +46,7 @@ If you are using VS Code as your IDE, here are the extensions needed to work on 
 ### 1.3 VS Code Recommended Settings
 
 **Autosave**
+
 Type `[CTRL + ,]` or go to _File -> Preferences -> Settings_ and type `auto save`. Select <u>one</u> of 3 options:
 
 - **afterDelay**: Saves file after every second.
@@ -73,7 +74,14 @@ Type `[CTRL + ,]` or go to _File -> Preferences -> Settings_ and type `format on
 <br>
 
 **Bracket Pair Colorization**
-Type `[CTRL + ,]` , or go to _File -> Preferences -> Settings_ and type `bracket pair colorization`. Check the checkbox for **Editor › Bracket Pair Colorization: Enabled** option.
+
+Type `[CTRL + ,]` or go to _File -> Preferences -> Settings_ and type `bracket pair colorization`. Check the checkbox for **Editor › Bracket Pair Colorization: Enabled** option.
+
+<br>
+
+**Autocomplete Tags**
+
+Type `[CTRL + ,]` or go to _File -> Preferences -> Settings_ and type `emmet`. Look for **Emmet:Include Languages** and click **Add Item**. For "Key", type `javascript` and for "Value", type `javascriptreact`.
 
 <br>
 
