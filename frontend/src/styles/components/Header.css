@@ -1,0 +1,29 @@
+.header {
+    display: flex;                               /* makes the header a flex container */
+    justify-content: space-between;              /* aligns the items in the header to the left and right */
+    align-items: center;                         /* aligns the items in the header vertically */
+    /* text-align: center; */                    /* centers the text in the header */
+    padding: 4px 18px;                           /* adds padding to the header */
+    color: var(--color-black);                   /* sets the text color to white */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* adds a shadow to the header */
+}
+
+.logo {
+    margin: 0;                                 /* removes the default margin from the logo */
+    font-family: 'Birthstone Bounce', cursive; /* sets the font family of the logo */
+    cursor: pointer;                           /* changes the cursor to a pointer when hovering over the logo */
+    color: var(--color-primary);               /* sets the text color of the logo */
+}
+
+.header nav ul {
+    list-style-type: none; /* removes the bullet points from the list */
+}
+
+.header nav ul li {
+    display: flex;  /* makes the list items display horizontally */
+    margin: 0 12px; /* spaces the list items out */
+}
+
+.header nav ul li a {
+    text-decoration: none; /* removes the underline from the links */
+}

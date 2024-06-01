@@ -1,24 +1,17 @@
-import logo from './assets/icons/logo.svg';
+import React, { useState } from 'react';
 import './styles/App.css';
+import Home from './pages/Home';
+import userIcon from './assets/icons/user-icon.svg';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);  // TODO: Connect to backend
+  const user = {
+    firstName: 'John', // TODO: Connect to backend
+    icon: userIcon,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Home isLoggedIn={isLoggedIn} user={user} />
   );
 }
 
